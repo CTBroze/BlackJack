@@ -324,7 +324,7 @@ def main() :
         pygame.draw.rect(screen, WHITE, [0, 150, 120, 100], 3)
 
 
-        # Display some text
+        #글자 출력
         text_dealer = font.render("Dealer", True, WHITE)
         text_player = font.render("Player", True, WHITE)
         text_player_info = font.render("Player Info", True, WHITE)
