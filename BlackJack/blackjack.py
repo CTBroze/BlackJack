@@ -95,6 +95,7 @@ def cycle_decisions(players) :
             sys.stdout.flush();
             time.sleep(0.5);
             disp_str_slow('\nEnd-of-Round Earnings: \n', 0.05);
+            #딜러가 버스트한경우
             if p.check_bust() :
                 for i in players[:-1] :
                     if not i.check_broke() :
@@ -103,8 +104,15 @@ def cycle_decisions(players) :
                         print('    ', end='');
                         for j in range(0,len(i.hand)) : # this is to loop through each hand for a player (player would have multiple hands after splitting)
                             if not i.check_bust(j) :
-                                print(f'{i.name} wins ${i.bet}! ', end='');
-                                i.money += i.bet;
+                                #5-찰리인경우
+                                if i.check_five_c(j) :
+                                    print(f'{i.name} wins ${i.bet * 1.5}!', end='');
+                                    i.money += i.bet * 1.5;
+                                #5-찰리가 아닌경우
+                                else:
+                                    print(f'{i.name} wins ${i.bet}! ', end='');
+                                    i.money += i.bet;
+                            #플레이어도 버스트한 경우        
                             else :
                                 print(f'{i.name} loses ${i.bet}! ', end='');
                                 i.money -= i.bet;
@@ -113,6 +121,7 @@ def cycle_decisions(players) :
                             print(f'Sorry {i.name}, but you\'re out of money and can no longer play in this game');
                         else :
                             print(f'Current Balance: ${i.money} (Chips: {i.chips})');
+            #딜러가 버스트 하지 않은경우
             else :
                 for i in players[:-1] :
                     if not i.check_broke() :
@@ -121,7 +130,11 @@ def cycle_decisions(players) :
                         print('    ', end='');
                         for j in range(0,len(i.hand)) :
                             if not i.check_bust(j) :
-                                if i.hand_value(j) > p.hand_value() :
+                                #5-찰리의 경우 버스트만 하지않는다면 딜러보다 우선순위가 높다
+                                if i.check_five_c() :
+                                    print(f'{i.name} wins ${i.bet * 1.5}!', end='');
+                                    i.money += i.bet * 1.5;
+                                elif i.hand_value(j) > p.hand_value() :
                                     print(f'{i.name} wins ${i.bet}! ', end='');
                                     i.money += i.bet;
                                 elif i.hand_value(j) < p.hand_value() :
