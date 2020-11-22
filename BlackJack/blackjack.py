@@ -156,7 +156,6 @@ def hit(player, dealer, hand_index=0) :
             dealer.deal_card(player, hand_index);
             done = check_status(player, hand_index);
     else :
-        
         choice = '';
         if not done :
             choice = input('Do you want to hit again (\'y\' or \'n\')? ').lower();
@@ -169,6 +168,9 @@ def hit(player, dealer, hand_index=0) :
                 choice = input('Do you want to hit again (\'y\' or \'n\')? ').lower();
                 while choice != 'y' and choice != 'n' :
                     choice = input('Enter either \'y\' or \'n\': ');
+            #반복중 5-찰리기준(5장이상의 손패) 달성시 반복문 탈출 및 반환
+            if player.check_five_c(hand_index):
+                return True
         if not done : print();
     return True;
      
