@@ -50,7 +50,7 @@ def drawObject(obj,x,y):
     screen.blit(obj,(x,y)) 
 
 def resetScreen() :
-    global font, screen, clock, hitB, standB, doubleDownB, DEALER_X, PLAYER_X
+    global font, screen, clock, hitB, standB, doubleDownB, resetB, DEALER_X, PLAYER_X
 
     DEALER_X = 150
     PLAYER_X = 100
@@ -73,6 +73,7 @@ def resetScreen() :
     hitB = pygame.draw.rect(screen, GRAY,[483,153,50,30])
     standB = pygame.draw.rect(screen, GRAY,[547,153,50,30])
     doubleDownB = pygame.draw.rect(screen, GRAY,[483,193,50,30])
+    resetB = pygame.draw.rect(screen, GRAY,[547,193,50,30])
 
     #입력 버튼 섹션
     pygame.draw.rect(screen, WHITE, [0, 150, 120, 100], 3)
@@ -86,10 +87,12 @@ def resetScreen() :
     text_hit = font.render("hit",True, BlACK)
     text_stand = font.render("stand",True,BlACK)
     text_doubleDown = font.render("DD",True,BlACK)
+    text_reset = font.render("reset",True,BlACK)
 
     drawObject(text_hit,486,156)
     drawObject(text_stand,550,156)
     drawObject(text_doubleDown,486,196)
+    drawObject(text_reset,550,196)
     drawObject(text_dealer, 150, 105)
     drawObject(text_player, 100, 285)
     drawObject(text_player_info, 30, 155)
@@ -234,6 +237,18 @@ def main():
                     drawObject(text_bet,5,200)
                     pygame.display.update()
                     dd = 1
+            #reset버튼 클릭
+            elif event.type == pygame.MOUSEBUTTONDOWN and resetB.collidepoint(pygame.mouse.get_pos()):
+                player = people.Player(player.name,1000)
+                dealer = people.Dealer(Deck(6))
+                text_info = font.render("Reset Game, 5sec After Restart Game",True,WHITE)
+                drawObject(text_info,200,200)
+                pygame.display.update()
+                time.sleep(5)
+                resetScreen()
+                seq = 0
+                dd = 0
+
 
     #화면 그리기
     clock.tick(60)
