@@ -145,6 +145,7 @@ def main():
                 PLAYER_X += 70
                 drawObject(pygame.image.load("images/"+player.hand[0][-1].img_url()).convert_alpha(),PLAYER_X,PLAYER_Y)
                 pygame.display.update()
+                dd = 1
                 if player.check_bust():
                     player.money -= player.bet
                     text_info = font.render("Lose, 5sec After Restart Game",True,WHITE)
