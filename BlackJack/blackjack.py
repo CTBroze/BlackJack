@@ -116,7 +116,7 @@ def view_hands() :
     drawObject(pygame.image.load("images/"+player.hand[0][1].img_url()).convert_alpha(), PLAYER_X, PLAYER_Y)
     pygame.display.update()
 
-def deal(dealer, players) :
+def deal() :
     if not player.check_broke() : dealer.deal_card(player)
     dealer.deal_card(dealer)
 
@@ -129,7 +129,7 @@ def main():
             reset()
             player.bet = 100
             for i in range(0,2) :
-                deal(dealer, player)
+                deal()
             view_hands()
             text_money = font.render("Money :"+str(player.money)+"$",True,WHITE)
             text_bet = font.render("Bet : "+str(player.bet)+"$",True,WHITE)
