@@ -1,6 +1,8 @@
 # BlackJack 오픈소스 개선 Project
 
 -> arjunkeerthi의 BlackJack 오픈소스를 개선하고 수정하는 프로젝트입니다.
+<br>
+-> (원본 코드로 이동 : https://github.com/arjunkeerthi/BlackJack)
 
 <hr>
 
