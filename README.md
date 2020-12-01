@@ -1,8 +1,7 @@
 # BlackJack 오픈소스 개선 Project
 
-arjunkeerthi의 BlackJack 오픈소스를 개선하는 프로젝트입니다.
+-> arjunkeerthi의 BlackJack 오픈소스를 개선하고 수정하는 프로젝트입니다.
 
-<br>
 <hr>
 
 ### 👨‍💻 **Collaborator** 👩‍💻
