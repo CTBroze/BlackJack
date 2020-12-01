@@ -11,7 +11,6 @@
 - 엄지연 - [https://github.com/eomjiyeon](https://github.com/eomjiyeon)
 - 최선재 - [https://github.com/tjswo2292](https://github.com/tjswo2292)
 
-<br>
 <hr>
 
 ### 📌 프로젝트 요약 📌
