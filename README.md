@@ -2,6 +2,7 @@
 
 arjunkeerthi의 BlackJack 오픈소스를 개선하는 프로젝트입니다.
 
+
 ### 👨‍💻 **Collaborator** 👩‍💻
 
 - 김민석 - [https://github.com/CTBroze](https://github.com/CTBroze)
@@ -11,7 +12,7 @@ arjunkeerthi의 BlackJack 오픈소스를 개선하는 프로젝트입니다.
 
 <br>
 <br>
----
+<hr>
 
 ### 📌 프로젝트 요약 📌
 
