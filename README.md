@@ -9,6 +9,8 @@ arjunkeerthi의 BlackJack 오픈소스를 개선하는 프로젝트입니다.
 - 엄지연 - [https://github.com/eomjiyeon](https://github.com/eomjiyeon)
 - 최선재 - [https://github.com/tjswo2292](https://github.com/tjswo2292)
 
+<br>
+<br>
 ---
 
 ### 📌 프로젝트 요약 📌
