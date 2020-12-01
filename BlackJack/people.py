@@ -59,6 +59,14 @@ class Player() :
     
     def check_broke(self) :
         return self.money == 0;
+
+    #5-찰리 체크
+    def check_five_c(self,hand_index=0):
+        hand_card = self.hand[hand_index]
+        if(len(hand_card) > 5):
+            return True
+        else:
+            return False
         
     def __str__(self) :
         return f'Name: {self.name}, Account: {self.money}, Chips: {self.chips}, Hand: {self.hand}, Current Bet: {self.bet}';  
